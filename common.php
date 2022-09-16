@@ -19,5 +19,4 @@ $conn = mysqli_connect("43.200.49.181:59516", "admin", "");
 mysqli_select_db($conn, "test");
 
 //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
-//asdfasfd
 ?>
