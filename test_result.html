@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			table{
+				margin-left: auto;
+				margin-right: auto;
+				width:70%;
+				border-collapse: collapse;
+			}
+			tr,td{
+				height:50px;
+			}
+			.submit{
+				text-align:center;
+			}
+		</style>
+		<script  src="https://code.jquery.com/jquery-3.6.1.js"  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="  crossorigin="anonymous"></script>
+		<script>
+			$(function(){
+				var params = {};
+				params['action'] = "get_result";
+				params['table_name'] = get_params("table_name");
+				
+				$.post("test_result.php", params, function(data){
+					var obj = eval("(" + data + ")");
+					
+					$("#result_table").append("<tr><td>번호</td><td>번호(엑셀)</td><td>정답</td><td>작성한답</td></tr>");
+					
+					var i = 1;
+					var j = 0;
+					obj.forEach(function(ele){
+						var color="black";
+						if(ele.answer != ele.user_answer)
+						{
+							color = "red";
+							j++;
+						}
+						
+						var str = "";
+						str += "<tr>";
+						str += "<td>" + ele.no + "</td>";
+						str += "<td>" + ele.question + "</td>";
+						str += "<td>" + ele.answer + "</td>";
+						str += "<td style='color:"+color+"'>" + ele.user_answer + "</td>";
+						str += "</tr>";
+						
+						$("#result_table").append(str);
+						i++;
+					})
+					
+					$("#result_table").after("맞은개수 : " + Number(i - j) + "/" + i)
+				})
+				
+			})
+						
+			function get_params(name){
+				var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+				return results[1] || 0;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<table id="result_table" border=1></table><br>
+			<input class=submit type="button" value="확인">
+		</center>
+	</body>
+</html>

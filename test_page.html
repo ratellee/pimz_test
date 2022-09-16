@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			.question{
+				font-size:30px;
+				font-weight:bold;
+			}
+			span{
+				font-size:28px;
+			}
+			input[type=checkbox]{
+				transform : scale(1.5);
+				margin-right:15px;
+			}
+		</style>
+		<script  src="https://code.jquery.com/jquery-3.6.1.js"  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="  crossorigin="anonymous"></script>
+		<script>
+			$(function(){
+				get_question();
+				
+				$(".submit").click(function(){
+					var params = {};
+					var user_answer = "";
+					
+					for(var value of $(".example"))
+					{
+						if(value.checked)
+							user_answer += (user_answer ? "," : "") + value.value;
+						
+						value.checked = false;
+					}
+					
+					params['action'] = "set_user_answer";
+					params['table_name'] = get_params("table_name");
+					params['user_answer'] = user_answer;
+					$.post("test_page.php", params, function(){
+						get_question();
+					});
+				});
+			})
+			
+			function get_params(name){
+				var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+				return results[1] || 0;
+			}
+			
+			function get_question()
+			{
+				var params = {};
+				params['table_name'] = get_params("table_name");
+				params['action'] = "get_question";
+				$.post("test_page.php", params, function(data){
+					var obj = eval("(" + data +")");
+					
+					$(".question").html(obj.no + "번 문제<br>" + obj.question);
+					$(".example1").html(obj.example1);
+					$(".example2").html(obj.example2);
+					$(".example3").html(obj.example3);
+					$(".example4").html(obj.example4);
+					$(".example5").html(obj.example5);
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div class='question'></div><br>
+		<input type='checkbox' class=example value=1><span class=example1></span><br>
+		<input type='checkbox' class=example value=2><span class=example2></span><br>
+		<input type='checkbox' class=example value=3><span class=example3></span><br>
+		<input type='checkbox' class=example value=4><span class=example4></span><br>
+		<input type='checkbox' class=example value=5><span class=example5></span><br><br>
+		<center><input type=button class='submit' value='제출'></center>
+	</body>
+</html>

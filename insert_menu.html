@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>시험 문제 등록</title>
+	<script  src="https://code.jquery.com/jquery-3.6.1.js"  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+	<script>
+	function upload(event){
+    	var input = $("#id_file_upload")[0];
+		var reader = new FileReader();
+		reader.onload = function(){
+			var fdata = reader.result;
+			var read_buffer = XLSX.read(fdata, {type : 'binary'});
+			read_buffer.SheetNames.forEach(function(sheetName){
+				var rowdata =XLSX.utils.sheet_to_json(read_buffer.Sheets[sheetName]);
+				var params = {};
+				rowdata.forEach(function(e){
+					params["data"] = e;
+					$.post("insert.php", params, function(data){
+						console.log(e);
+					})
+				})
+			})
+		};
+		reader.readAsBinaryString(input.files[0]);
+	}
+	</script>
+</head>
+<body>
+	<input type="file" id="id_file_upload"/>
+	<button onclick='upload()'>전송</button>
+</body>
+</html>

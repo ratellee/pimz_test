@@ -1,0 +1,337 @@
+2022/09/16 12:49:59 asdf
+2022/09/16 12:50:30 asdf
+2022/09/16 12:51:23 asdf
+2022/09/16 12:51:23 CREATE TABLE  (
+	no int(10) NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916125123_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 12:51:23 insert into exams_20220916125123(no) select no from exams_22_q3 
+2022/09/16 12:52:11 asdf
+2022/09/16 12:52:11 CREATE TABLE exams_20220916125211 (
+	no int(10) NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916125211_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 12:52:11 insert into exams_20220916125211(no) select no from exams_22_q3 
+2022/09/16 12:52:46 asdf
+2022/09/16 12:52:46 CREATE TABLE exams_20220916125246 (
+	no int(10) NOTNULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916125246_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 12:52:46 insert into exams_20220916125246(no) select no from exams_22_q3 
+2022/09/16 12:53:38 CREATE TABLE exams_20220916125338 (
+	no int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916125338_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 12:53:38 insert into exams_20220916125338(no) select no from exams_22_q3 
+2022/09/16 12:53:58 CREATE TABLE exams_20220916125358 (
+	no int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916125358_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 12:53:58 insert into exams_20220916125358(no) select no from exams_22_q3 order by rand() limit 25
+2022/09/16 12:57:54 CREATE TABLE exams_20220916125754 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916125754_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 12:57:54 insert into exams_20220916125754(question, answer) select no, answer from exams_22_q3 order by rand() limit 25
+2022/09/16 13:04:13 CREATE TABLE exams_20220916130413 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916130413_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 13:04:13 insert into exams_20220916130413(question, answer) select no, answer from exams_22_q3 order by rand() limit 25
+2022/09/16 13:04:34 CREATE TABLE exams_20220916130434 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916130434_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 13:04:34 insert into exams_20220916130434(question, answer) select no, answer from exams_22_q3 
+2022/09/16 13:08:04 CREATE TABLE exams_20220916130804 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916130804_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 13:08:04 insert into exams_20220916130804(question, answer) select no, answer from exams_22_q3 
+2022/09/16 13:27:00 get_question
+2022/09/16 13:27:22 get_question
+2022/09/16 13:27:22 select * from exams_20220916130804 where user_anwser is null order by no limit 1
+2022/09/16 13:28:16 select * from exams_20220916130804 where user_anwser is null order by no limit 1
+2022/09/16 13:29:01 select * from exams_20220916130804 where user_answer is null order by no limit 1
+2022/09/16 13:30:05 Array
+(
+    [no] => 1
+    [question] => 1
+    [answer] => 
+    [user_answer] => 
+)
+
+2022/09/16 13:30:21 Array
+(
+    [no] => 1
+    [question] => 1
+    [answer] => 
+    [user_answer] => 
+)
+
+2022/09/16 13:30:29 Array
+(
+    [no] => 1
+    [question] => 1
+    [answer] => 
+    [user_answer] => 
+)
+
+2022/09/16 13:33:58 select * from exams_20220916130804 a, exams_22_q3 b where a.no=b.question and b.user_answer is null order by b.no limit 1
+2022/09/16 13:34:41 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:35:55 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:37:13 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:37:49 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:46:35 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:49:11 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:50:19 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:51:06 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:51:31 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:51:51 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:52:07 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:52:33 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:53:31 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:53:48 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:53:49 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:55:34 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:56:22 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:57:58 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:58:01 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:58:01 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:58:26 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:59:52 select * from exams_20220916130804 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 13:59:55 CREATE TABLE exams_20220916135955 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916135955_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 13:59:55 insert into exams_20220916135955(question, answer) select no, answer from exams_22_q3 order by rand() limit 25
+2022/09/16 13:59:56 select * from exams_20220916135955 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:01:07 CREATE TABLE exams_20220916140107 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916140107_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 14:01:07 insert into exams_20220916140107(question, answer) select no, answer from exams_22_q3 
+2022/09/16 14:01:11 select * from exams_20220916140107 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:02:19 CREATE TABLE exams_20220916140219 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916140219_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 14:02:19 insert into exams_20220916140219(question, answer) select no, answer from exams_22_q3 
+2022/09/16 14:02:20 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:02:27 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:02:27 update exams_20220916140219 set user_answer = '1' where no=1
+2022/09/16 14:02:27 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:04:11 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:04:13 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:04:13 update exams_20220916140219 set user_answer = '1' where no=2
+2022/09/16 14:04:14 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:04:16 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:04:16 update exams_20220916140219 set user_answer = '1' where no=3
+2022/09/16 14:04:17 select * from exams_20220916140219 a, exams_22_q3 b where b.no=a.question and a.user_answer is null order by b.no limit 1
+2022/09/16 14:06:00 select * 
+			from exams_20220916140219 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 14:06:00 update exams_20220916140219 set user_answer = '3' where no=4
+2022/09/16 14:06:00 select * 
+			from exams_20220916140219 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 14:06:03 select * 
+			from exams_20220916140219 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 14:06:03 update exams_20220916140219 set user_answer = '2' where no=5
+2022/09/16 14:06:05 select * 
+			from exams_20220916140219 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:21:52 CREATE TABLE exams_20220916152152 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916152152_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 15:21:52 insert into exams_20220916152152(question, answer) select no, answer from exams_22_q3 order by rand() limit 25
+2022/09/16 15:21:53 select * 
+			from exams_20220916152152 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:21:55 select * 
+			from exams_20220916152152 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:21:55 update exams_20220916152152 set user_answer = '1' where no=3
+2022/09/16 15:21:56 select * 
+			from exams_20220916152152 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:22:09 select * 
+			from exams_20220916152152 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:22:09 update exams_20220916152152 set user_answer = '3' where no=3
+2022/09/16 15:22:11 select * 
+			from exams_20220916152152 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:22:38 CREATE TABLE exams_20220916152238 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916152238_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 15:22:38 insert into exams_20220916152238(question, answer) select no, answer from exams_22_q3 order by rand() limit 25
+2022/09/16 15:22:38 select * 
+			from exams_20220916152238 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:23:28 select * 
+			from exams_20220916152152 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:23:33 CREATE TABLE exams_20220916152333 (
+	no int(10) NOT NULL auto_increment,
+	question int(10) NOT NULL,
+	answer varchar(100) NULL,
+	user_answer varchar(100) NULL,
+	CONSTRAINT exams_20220916152333_PK PRIMARY KEY (no)
+)
+ENGINE=MEMORY
+DEFAULT CHARSET=utf8
+COLLATE=utf8_unicode_ci
+2022/09/16 15:23:33 insert into exams_20220916152333(question, answer) select no, answer from exams_22_q3 order by rand() limit 25
+2022/09/16 15:23:33 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:24:13 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:24:17 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:24:57 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:25:59 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:27:24 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:27:33 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:27:37 select * 
+			from exams_20220916152238 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:28:03 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:28:03 update exams_20220916152333 set user_answer = '2' where no=38
+2022/09/16 15:28:04 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:28:23 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:28:23 update exams_20220916152333 set user_answer = '' where no=38
+2022/09/16 15:28:23 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:28:25 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
+2022/09/16 15:28:25 update exams_20220916152333 set user_answer = '2' where no=38
+2022/09/16 15:28:25 select * 
+			from exams_20220916152333 a left join exams_22_q3 b 
+			on a.question = b.no
+			where a.user_answer is null order by b.no limit 1
